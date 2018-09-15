@@ -1,0 +1,60 @@
+<Film width="800" heigth="600" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="20">
+  40, 40, 0
+   0,  0, 0
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="16">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="whitted">
+</Integrator>
+<Materials>
+  <Material type="" name="earth" emisMap="../assets/earth/earth_lights.jpg" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/earth/earth_d1.jpg">
+        1
+      </Brdf>
+      <Brdf type="blinn" map="../assets/earth/earth_spec.jpg">
+        .14 ,8
+      </Brdf>
+    </Brdfs>
+  </Material>
+<Material type="" name="specular" emis=".01, .001, .0011">
+    <Brdfs type="add">
+	<Brdf type="lambert">
+        0,0,0, 1
+      </Brdf>
+      <Brdf type="blinn">
+        1, 1, 1, 1, 2
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group mat="specular">
+    <Object type="sphere">
+      0, 0, 0
+      8
+    </Object>
+	*tr(10)*
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    3
+    1, 1, 1
+    0, -5, -5
+  </Light>
+  <!-- <Light type="point" >
+    6
+    1, 1, 1
+    0, 0, 40
+  </Light> -->
+</Lights>
+<Environment>
+  1, 1, 1
+</Environment>

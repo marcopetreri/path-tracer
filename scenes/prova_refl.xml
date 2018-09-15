@@ -1,0 +1,73 @@
+<Film width="800" heigth="600" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="20">
+  80, 80, 25
+   0,  0, 15
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="16">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="whitted">
+</Integrator>
+<Materials>
+  <Material type="" name="Plane" reflMap="../assets/txt/parquet_refl_smooth.jpg" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/txt/parquet.jpg">
+        1
+      </Brdf>
+      <Brdf type="blinn" map="../assets/txt/parquet_refl_smooth.jpg">
+        1, 500
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="corner" refl="1" >
+    <Brdfs type="add">
+      <Brdf type="blinn" map="">
+        1, 1000
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="earth" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/earth/earth_cloudy_diffuse.jpg">
+        1
+      </Brdf>
+      <Brdf type="blinn" map="../assets/earth/earth_spec.jpg">
+        1000
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group model="../assets/corner.obj" mat="corner">
+    *sc(2)*
+    <!-- 6, 0, 0, 0,
+    0, 6, 0, 0,
+    0, 0, 6, 0, -->
+  </Group>
+  <Group mat="earth">
+    <Object type="sphere">
+      0, 0, 8
+      8
+    </Object>
+    <!-- *tr(-35,0,0)*sc(.22)* -->
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    3
+    1, 1, 1
+    -1, -1, -1
+  </Light>
+  <!-- <Light type="point" >
+    6
+    1, 1, 1
+    0, 0, 40
+  </Light> -->
+</Lights>
+<Environment>
+  0, 0, 1
+</Environment>

@@ -1,0 +1,80 @@
+<Film width="800" heigth="600" path="" >
+  <!-- nome.ext - possibile parse dell'ext -->
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="20">
+  <!-- eye -->
+  <!-- lookAt -->
+  <!-- up -->
+  30, 0, 0
+   0,  0, 0
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="16">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="">
+</Integrator>
+<Materials>
+  <Material type="" name="corner" > <!-- se c'è il tipo lo uso altrimenti lo costruisco -->
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/txt/metalwall.jpg"> <!-- se c'è la mappa la uso altrimenti l
+        <!-- albedo,kd -->
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="earth" emis=".01, .01, .01">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/earth/earth_d1.jpg">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+<Material type="" name="diffuse" emis=".01, .001, .0011">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, .1, .11, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+<Material type="" name="specular" emis=".01, .001, .0011">
+    <Brdfs type="add">
+	<Brdf type="lambert">
+        1, .1, .11, 1
+      </Brdf>
+      <Brdf type="blinn">
+        1, 1, 1, 1, 80
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group model="../assets/earth/earth.obj" mat="specular">
+  </Group>
+</Objects>
+<Lights>
+  <!-- <Light type="directional" >
+    power
+    color
+    direction
+  </Light> -->
+  <Light type="point" >
+    0
+    1, 1, 1
+    10, -50, 0
+    <!-- power -->
+    <!-- color -->
+    <!-- position -->
+  </Light>
+  <Light type="point" >
+    12
+    1, 1, 1
+    20, 20, 0
+  </Light>
+</Lights>
+<Environment>
+  <!-- color -->
+  1, 1, 1
+</Environment>

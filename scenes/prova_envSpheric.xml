@@ -1,0 +1,51 @@
+<Film width="800" heigth="600" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="100">
+  80, 0, 0
+   0, 0, 0
+   0, 0,  1
+</Camera>
+<Sampler type="multijitter" samples="256">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="">
+</Integrator>
+<Materials>
+  <Material type="" name="floor" refl="1" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        0, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="sphere" refl="1">
+    <Brdfs type="add">
+      <!-- <Brdf type="lambert">
+        0, 1
+      </Brdf> -->
+      <Brdf type="cooktorrance">
+        .2, .1
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group mat="sphere">
+    <Object type="sphere">
+      0, 0, 0
+      50
+    </Object>
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    10
+    1, 1, 1
+    -1, 0, 0
+  </Light>
+</Lights>
+<Environment map="../assets/env/Alexs_Apartment/Alexs_Apt_8k.jpg">
+  0, 0, 0
+</Environment>

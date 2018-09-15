@@ -1,0 +1,519 @@
+<Film width="1920" heigth="1080" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="70">
+  30, 1, 4
+   10,  1, 0
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="256">
+</Sampler>
+<Accelerator gen="27" prim="30">
+</Accelerator>
+<Integrator type="pathtracing" depth="2">
+</Integrator>
+<Materials>
+  <Material type="" name="table">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/parquet.jpg" >
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/parquet_refl_smooth.jpg">
+        .3, 1.5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="plate">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="spoon">
+    <Brdfs type="add">
+      <Brdf type="cooktorrance">
+        1, .15
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="pipe">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/model0.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .04, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="pipe_top">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/model1.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="napkin" normMap="../assets/exam/txt/tissue_normal.png">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/napkin.jpg">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="ring">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        .75, .57, .16, 1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .76, .33, .2
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="rayman">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/rayman.PNG">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="spyro">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/spyro.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .2, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="crash">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/Crash.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="crash_shoes">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/CrashShoes.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="crash_back">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/CrashBack.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="gem_blue">
+    <Brdfs type="add">
+      <Brdf type="lambert" >
+        0, 0, 1, 1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/gem_s.png">
+        .45, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="gem_green">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        0, 1, 0, 1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/gem_s.png">
+        .45, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="gem_rayman">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/Gold.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .7, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="fire_flower">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/fire.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="ice_flower">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/ice.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="portal_hearth">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/compcube.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/portal_cube_s.png">
+        .5, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="portal_normal">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/metal_box.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/portal_cube_s.png">
+        .5, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="coin">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        .96, .93, .05, 1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .94, 0, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="bomb">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/bomb.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .2, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="cristal">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/cristal.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .45
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="coin_gold">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/coin_cube.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="coin_point">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/coin_cube_point.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="coin_silver">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/coin_cube_quest.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .8
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="masterball">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/masterball.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .5, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="shell">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/koopa.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .5, .45
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="botte">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/botte.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="block">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/block.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .5, .8
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="green_eye, red_eye">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/eye.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="green_body, red_body">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/body.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="green_head_up">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/green_head.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="red_head_up">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/red_head.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="green_head_down">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/green_shade.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="red_head_down">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/red_shade.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="star">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/star.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .3, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="star_eye">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/shine.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .5, .7
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="yoshi">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/yoshi.jpg">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .4, .6
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="wumpa">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/wumpa.png">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .3, .5
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="brickblock">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/brickblock.jpg">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/exam/txt/brickblock_s.jpg">
+        .4, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="crate_base, crate_base2">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/base.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="qmark_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/qmark.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="nitro_base">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/nitro_base.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="nitro_outer">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/nitro_outer.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="nitro_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/nitro_text.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="tnt_base">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/tnt_base.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="tnt_outer">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/tnt_outer.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="tnt_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/tnt_text.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="bounce_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/bounce_text.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="check_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/check.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="crash_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/crash.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="aku_text">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/exam/txt/aku.png">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+
+</Materials>
+<Objects>
+  <Group model="../assets/exam/table_stuff.obj">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/table.obj" mat="table">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/spoon.obj" mat="spoon">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/rayman.obj" mat="rayman">
+    *tr(0,.1,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/spyro.obj" mat="spyro">
+    *tr(23.2,2.2,2.4)*sc(.7)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/stuff.obj">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/crash_crate.obj">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/coin_block.obj">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+  <Group model="../assets/exam/brick_block1.obj" mat="brickblock">
+    *tr(0,0,0)*sc(3)*rz(90)*rx(90)*
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    .5
+    1, 1, 1
+    -1, 0, -1
+  </Light>
+  <!--<Light type="directional" >
+    .5
+    1, 1, 1
+    0, -1, -1
+  </Light>
+  <Light type="directional" >
+    .5
+    1, 1, 1
+    0, 1, -1
+  </Light> -->
+  <Light type="point">
+    1.25,
+    1, 1, 1
+    24, 1.5, 5
+  </Light>
+</Lights>
+<Environment map="../assets/exam/txt/env.jpg">
+  0, 0, 0
+</Environment>

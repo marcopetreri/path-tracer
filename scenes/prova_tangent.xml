@@ -1,0 +1,70 @@
+<Film width="800" heigth="600" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="30">
+  80, 80, 45
+   0,  0, 0
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="256">
+</Sampler>
+<Accelerator gen="25" prim="50">
+</Accelerator>
+<Integrator type="pathtracing" depth="2">
+</Integrator>
+<Materials>
+  <Material type="" name="Plane.001">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        1, 0, 0, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="Plane.002">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        0, 1, 0, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="corner">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="model" >
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1,1,0, 1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        .8, .5, 0, .3
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group model="../assets/corner.obj" mat="corner">
+    *sc(3)*
+  </Group>
+  <Group model="/home/pepello/Scrivania/scena/lotr_ring.obj" mat="model">
+    *tr(0,0,3)*sc(5)*ry(90)*rz(90)*
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    2
+    1, 1, 1
+    -1, -1, 0
+  </Light>
+  <Light type="point" >
+    5
+    1, 1, 1
+    0, 0, 20
+  </Light>
+</Lights>
+<Environment>
+  0, 0, 0
+</Environment>

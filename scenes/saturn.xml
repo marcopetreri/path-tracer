@@ -1,0 +1,79 @@
+<Film width="800" heigth="600" path="" >
+  <!-- nome.ext - possibile parse dell'ext -->
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="20">
+  <!-- eye -->
+  <!-- lookAt -->
+  <!-- up -->
+  80, 80, 25
+   0,  0, 15
+   0,  0,  1
+</Camera>
+<Sampler type="regular" samples="1">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="">
+</Integrator>
+<Materials>
+  <Material type="" name="corner" > <!-- se c'è il tipo lo uso altrimenti lo costruisco -->
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/txt/metalwall.jpg"> <!-- se c'è la mappa la uso altrimenti l
+        <!-- albedo,kd -->
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="saturn">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/saturn/saturnmap.jpg">
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group model="../assets/corner.obj" mat="corner">
+    6, 0, 0, 0,
+    0, 6, 0, 0,
+    0, 0, 6, 0,
+  </Group>
+  <Group>
+    <Object type="sphere" mat="saturn">
+      -20, -20, 10,
+      10
+      <!-- Center -->
+      <!-- radius -->
+    </Object>
+  </Group>
+</Objects>
+<Lights>
+  <!-- <Light type="directional" >
+    power
+    color
+    direction
+  </Light> -->
+  <Light type="point" >
+    3
+    1, 1, 1
+    -30, 0, 1
+    <!-- power -->
+    <!-- color -->
+    <!-- position -->
+  </Light>
+  <Light type="point" >
+    3
+    1, 1, 1
+    0, -30, 1
+  </Light>
+  <Light type="point" >
+    50
+    1, 1, 1
+    0, 0, 67
+  </Light>
+</Lights>
+<Environment>
+  <!-- color -->
+  0, 0, 0
+</Environment>

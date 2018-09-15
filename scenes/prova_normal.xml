@@ -1,0 +1,124 @@
+<Film width="400" heigth="200" path="" >
+  rendering.bmp
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="20">
+  80, 80, 25
+   0,  0, 15
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="16">
+</Sampler>
+<Accelerator gen="20" prim="50">
+</Accelerator>
+<Integrator type="pathtracing" depth="2">
+</Integrator>
+<Materials>
+  <Material type="" name="Plane, sphere" normMap="../assets/txt/normal.png">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/txt/parquet.jpg">
+        1
+      </Brdf>
+      <!-- <Brdf type="cooktorrance" sMap="../assets/txt/parquet_refl_smooth.jpg">
+        .1
+      </Brdf> -->
+    </Brdfs>
+  </Material>
+  <Material type="" name="corner" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/txt/stonewall.jpg">
+        1
+      </Brdf>
+      <!-- <Brdf type="cooktorrance" sMap="../assets/txt/stonewall_spec.jpg">
+        .9
+      </Brdf> -->
+    </Brdfs>
+  </Material>
+  <Material type="" name="r2d2" emisMap="../assets/Star_Pack/Maps/R2D2_Illumination.dds" normMap="../assets/Star_Pack/Maps/R2D2_Normal.dds">
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/Star_Pack/Maps/R2D2_Diffuse.dds">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/Star_Pack/Maps/R2D2_Specular.dds" rMap="../assets/Star_Pack/Maps/R2D2_roughness.dds">
+        .8, .3
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <!--<Material type="" name="bb8_body" emisMap="../assets/Star_Pack/Maps/Body_Illumination.dds" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/Star_Pack/Maps/Body_Diffuse.dds">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/Star_Pack/Maps/Body_Specular.dds" rMap="../assets/Star_Pack/Maps/Body_roughness.dds">
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="bb8_head" emisMap="../assets/Star_Pack/Maps/Head_Illumination.dds" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="../assets/Star_Pack/Maps/Head_Diffuse.dds">
+        1
+      </Brdf>
+      <Brdf type="cooktorrance" sMap="../assets/Star_Pack/Maps/Head_Specular.dds" rMap="../assets/Star_Pack/Maps/Head_roughness.dds">
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="BB8_Big_Camera, BB8_Small_Camera" >
+    <Brdfs type="add">
+      <Brdf type="lambert" map="">
+        .14, 1
+      </Brdf>
+      <Brdf type="cooktorrance" map="">
+        .04, .6
+      </Brdf>
+    </Brdfs>
+  </Material> -->
+</Materials>
+<Objects>
+  <Group model="../assets/corner.obj" mat="corner">
+    *sc(6)*
+  </Group>
+  <!-- <Group mat="sphere">
+    <Object type="sphere">
+      0, 0, 8,
+      8
+    </Object>
+  </Group> -->
+  <Group model="../assets/Star_Pack/R2_Unit.obj" mat="r2d2">
+    *tr(0,0,0)*sc(.22)*
+  </Group>
+  <!--<Group>
+    <Group model="../assets/Star_Pack/BB_Unit_Body.obj" mat="bb8_body">
+    </Group>
+    <Group model="../assets/Star_Pack/BB_Unit_Head.obj" mat="bb8_head">
+    </Group>
+    *tr(0,-38,11.2)*rz(90)*sc(.18)*
+  </Group> -->
+</Objects>
+<Lights>
+  <Light type="directional" >
+    1
+    1, 1, 1
+    -1, 0, -.5
+  </Light>
+  <Light type="directional" >
+    1
+    1, 1, 1
+    0, -1, -.5
+  </Light>
+  <!--<Light type="point" >
+    .5
+    .1, .25, .45
+    -32, 0, 1
+  </Light>
+  <Light type="point" >
+    .5
+    .85, .5, .19
+    0, -30, 1
+  </Light> -->
+  <!-- <Light type="point" >
+    25
+    1, 1, 1
+    0, 0, 30
+  </Light> -->
+</Lights>
+<!-- <Environment map="../assets/env/Newport_Loft/Newport_Loft_8k.jpg">
+</Environment> -->
