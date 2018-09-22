@@ -3,7 +3,7 @@
 
 #include "../geometry/vec3d.hpp"
 #include "../utilities/math.hpp"
-#include <SOIL/SOIL.h>
+#include "SOIL2.h"
 #include <iostream>
 
 

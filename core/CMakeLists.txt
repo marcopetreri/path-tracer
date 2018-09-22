@@ -10,28 +10,28 @@ set(CAMERAS_DIR ${CMAKE_CURRENT_LIST_DIR}/cameras)
 
 # Building libraries
 
-add_library(GEOMETRY 
+add_library(GEOMETRY SHARED
   ${GEOMETRY_DIR}/mat4f.cpp
   ${GEOMETRY_DIR}/mat4d.cpp
   ${GEOMETRY_DIR}/transform.cpp
 )
 
-add_library(GEOMETRIC_OBJECTS 
+add_library(GEOMETRIC_OBJECTS SHARED
   ${GEOMETRIC_OBJECTS_DIR}/sphere.cpp
   ${GEOMETRIC_OBJECTS_DIR}/triangle.cpp
 )
 
-add_library(CAMERAS 
+add_library(CAMERAS SHARED
   ${CAMERAS_DIR}/camera.cpp
   ${CAMERAS_DIR}/orthographic.cpp
   ${CAMERAS_DIR}/perspective.cpp
 )
 
-add_library(ACCELERATORS ${CMAKE_CURRENT_LIST_DIR}/accelerators/accelerator.cpp)
+add_library(ACCELERATORS SHARED ${CMAKE_CURRENT_LIST_DIR}/accelerators/accelerator.cpp)
 
-add_library(PARSER ${CMAKE_CURRENT_LIST_DIR}/utilities/parser.cpp)
+add_library(PARSER SHARED ${CMAKE_CURRENT_LIST_DIR}/utilities/parser.cpp)
 
-add_library(WORLD ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
+add_library(WORLD SHARED ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
 
 # Linking libraries
 
@@ -39,4 +39,4 @@ target_link_libraries(CAMERAS GEOMETRY)
 
 target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY -lassimp)
 
-target_link_libraries(WORLD ACCELERATORS PARSER -lSOIL)
+target_link_libraries(WORLD ACCELERATORS PARSER ${SOIL2_LIB})
