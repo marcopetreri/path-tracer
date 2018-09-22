@@ -14,6 +14,8 @@ Before building the project make sure you install OpenGL dev suite.
 
 ## Building
 
+**IMPORTANT**: because the project has some submodule, add `--recurse-submodules` when cloning it.
+
 From the root of the project, type this commands in order to build it.
 
 `mkdir build && cd build`

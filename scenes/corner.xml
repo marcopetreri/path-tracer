@@ -64,7 +64,7 @@
     *tr(-5,-15,3.5)*sc(3)*rz(135)*rx(90)*
   </Group>
   <Group model="../assets/suzanne.obj" mat="s2">
-    *tr(-10,-10,3.5)*sc(3)*rz(135)*rx(90)*
+    *tr(-5,-5,3.5)*sc(3)*rz(135)*rx(90)*
   </Group>
   <Group model="../assets/suzanne.obj" mat="s3">
     *tr(-15,-5,3.5)*sc(3)*rz(135)*rx(90)*
