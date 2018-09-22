@@ -1,48 +1,42 @@
-set(ACCELERATORS ${CMAKE_SOURCE_DIR}/core/accelerators)
-set(CAMERAS ${CMAKE_SOURCE_DIR}/core/cameras)
-set(GEOMETRICOBJECTS ${CMAKE_SOURCE_DIR}/core/geometricObjects)
-set(GEOMETRY ${CMAKE_SOURCE_DIR}/core/geometry)
-set(INTEGRATORS ${CMAKE_SOURCE_DIR}/core/integrators)
-set(UTILITIES ${CMAKE_SOURCE_DIR}/core/utilities)
-set(MISC ${CMAKE_SOURCE_DIR}/core)
+# Features libraries folders paths variables
 
-set(accelerators accelerator)
-set(cameras camera orthographic perspective)
-set(geometricObjects sphere triangle)
-set(geometry mat4f mat4d transform)
-set(utilities parser)
-set(misc world)
+set(GEOMETRY_DIR ${CMAKE_CURRENT_LIST_DIR}/geometry)
+set(GEOMETRIC_OBJECTS_DIR ${CMAKE_CURRENT_LIST_DIR}/geometricObjects)
+set(CAMERAS_DIR ${CMAKE_CURRENT_LIST_DIR}/cameras)
+# set(INTEGRATORS_DIR ${CMAKE_SOURCE_DIR}/core/integrators)
+# set(UTILITIES_DIR ${CMAKE_SOURCE_DIR}/core/utilities)
+# set(MISC_DIR ${CMAKE_SOURCE_DIR}/core)
 
-foreach(file ${accelerators})
-  add_library(${file} ${ACCELERATORS}/${file}.cpp)
-endforeach(file)
 
-foreach(file ${cameras})
-  add_library(${file} ${CAMERAS}/${file}.cpp)
-endforeach(file)
+# Building libraries
 
-foreach(file ${geometry})
-  add_library(${file} ${GEOMETRY}/${file}.cpp)
-endforeach(file)
+add_library(GEOMETRY 
+  ${GEOMETRY_DIR}/mat4f.cpp
+  ${GEOMETRY_DIR}/mat4d.cpp
+  ${GEOMETRY_DIR}/transform.cpp
+)
 
-foreach(file ${geometricObjects})
-  add_library(${file} ${GEOMETRICOBJECTS}/${file}.cpp)
-endforeach(file)
+add_library(GEOMETRIC_OBJECTS 
+  ${GEOMETRIC_OBJECTS_DIR}/sphere.cpp
+  ${GEOMETRIC_OBJECTS_DIR}/triangle.cpp
+)
 
-foreach(file ${utilities})
-  add_library(${file} ${UTILITIES}/${file}.cpp)
-endforeach(file)
+add_library(CAMERAS 
+  ${CAMERAS_DIR}/camera.cpp
+  ${CAMERAS_DIR}/orthographic.cpp
+  ${CAMERAS_DIR}/perspective.cpp
+)
 
-foreach(file ${misc})
-  add_library(${file} ${MISC}/${file}.cpp)
-endforeach(file)
+add_library(ACCELERATORS ${CMAKE_CURRENT_LIST_DIR}/accelerators/accelerator.cpp)
 
-target_link_libraries(orthographic camera mat4f)
+add_library(PARSER ${CMAKE_CURRENT_LIST_DIR}/utilities/parser.cpp)
 
-target_link_libraries(perspective camera mat4f)
+add_library(WORLD ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
 
-target_link_libraries(transform mat4d)
+# Linking libraries
 
-target_link_libraries(parser orthographic perspective transform triangle sphere ${ASSIMP_LIBRARIES})
+target_link_libraries(CAMERAS GEOMETRY)
 
-target_link_libraries(world accelerator parser ${SOIL_LIBRARIES})
+target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY -lassimp)
+
+target_link_libraries(WORLD ACCELERATORS PARSER -lSOIL)

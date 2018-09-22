@@ -1,5 +1,6 @@
 #include <iostream>
-#include "core/appGui.hpp"
+// #include "core/appGui.hpp"
+#include "core/world.hpp"
 #include "core/utilities/buildFunctions.hpp"
 
 int main(int argc, char const * argv[]){
