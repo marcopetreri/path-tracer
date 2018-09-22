@@ -6,8 +6,8 @@
 
 class Film: public PixelBuffer{
 public:
-  Film(): PixelBuffer(), path("rendering.bmp"), temp_map(nullptr){}
-  Film(int w, int h, int c): PixelBuffer(w,h,c), path("rendering.bmp"){
+  Film(): PixelBuffer(), path("rendering.png"), temp_map(nullptr){}
+  Film(int w, int h, int c): PixelBuffer(w,h,c), path("rendering.png"){
     temp_map = new double[size()];
     for(int i = 0; i < size(); ++i)
       temp_map[i] = 0.;
@@ -44,7 +44,7 @@ public:
   }
 
   int save(){
-    if(SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_BMP, width, heigth, channels, map)){
+    if(SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_PNG, width, heigth, channels, map)){
       std::cout << "\tImage succesfully saved to " << path << "\n";
       return true;
     }
@@ -54,7 +54,7 @@ public:
   }
 
   int save(const std::string & path){
-    if(SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_BMP, width, heigth, channels, map)){
+    if(SOIL_save_image(path.c_str(), SOIL_SAVE_TYPE_PNG, width, heigth, channels, map)){
       std::cout << "\tImage succesfully saved to " << path << "\n";
       return true;
     }

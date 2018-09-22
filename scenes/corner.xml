@@ -1,5 +1,5 @@
 <Film width="800" heigth="600" path="" >
-  rendering.bmp
+  rendering.png
 </Film>
 <Camera type="perspective" near="10e-5" far="10e5" fov="20">
   25, 25, 25
