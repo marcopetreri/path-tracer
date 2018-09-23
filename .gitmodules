@@ -1,3 +1,6 @@
 [submodule "externals/SOIL2"]
 	path = externals/SOIL2
 	url = git@github.com:alelievr/SOIL2.git
+[submodule "externals/assimp"]
+	path = externals/assimp
+	url = git@github.com:assimp/assimp.git
