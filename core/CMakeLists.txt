@@ -37,6 +37,6 @@ add_library(WORLD SHARED ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
 
 target_link_libraries(CAMERAS GEOMETRY)
 
-target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY -lassimp)
+target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY ${ASSIMP_LIB})
 
 target_link_libraries(WORLD ACCELERATORS PARSER ${SOIL2_LIB})
