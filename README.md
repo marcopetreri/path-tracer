@@ -30,4 +30,4 @@ From the building folder launch the program with the path of a scene for render 
 
 `./path_tracer ../scenes/SCENE_NAME`
 
-The program outputs its render in the building folder as `rendering.bmp`
+The program outputs its render in the building folder as `rendering.png`
