@@ -1,6 +1,7 @@
 #ifndef _PARSER_
 #define _PARSER_
 
+#include <vector>
 #include <string>
 #include <unordered_map>
 #include <assimp/Importer.hpp>

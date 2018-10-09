@@ -10,7 +10,7 @@ public:
   ~SuperSampler(){}
 
   Vec3f sample(){
-    div_t xy = div(current, n);
+    div_t xy = div((int)current, (int)n);
     return Vec3f(xy.rem , xy.quot, 0.f)*invN;
   }
 

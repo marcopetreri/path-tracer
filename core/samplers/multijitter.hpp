@@ -10,7 +10,7 @@ public:
   ~MultijitterSampler(){}
 
   Vec3f sample(){
-    div_t xy = div(current, n);
+    div_t xy = div((int)current, (int)n);
     u_int px = permute(xy.rem, n, seed*0xa511e9b3);
     u_int py = permute(xy.quot, n, seed*0x63d83595);
     float jx = randfloat(current, seed*0xa399d265);
