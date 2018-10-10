@@ -1,0 +1,130 @@
+<Film width="1024" heigth="1024" path="" >
+  rendering.png
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="29.5">
+  100, 0, 0
+   0,  0, 0
+   0,  0,  1
+</Camera>
+<Sampler type="multijitter" samples="25">
+</Sampler>
+<Accelerator gen="1" prim="5">
+</Accelerator>
+<Integrator type="pathtracing" depth="4">
+</Integrator>
+<Materials>
+  <Material type="" name="sphere1">
+    <Brdfs type="add">
+      <Brdf type="cooktorrance">
+        1, .7
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material name="sphere2">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, .2, .2
+        1
+      </Brdf>
+      <Brdf type="cooktorrance">
+        1, .7
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material name="sphere3">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        .2, 1, .2
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material name="sphere4">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        .2, .2, 1
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material name="sphere5">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, .2, 1
+        1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material name="sphere6" emis="1,1,1">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group mat="sphere1">
+    <Object type="sphere">
+      0, 0, 0
+      6
+    </Object>
+  </Group>
+  <Group mat="sphere2">
+    <Object type="sphere">
+      10, -10, 10
+      6
+    </Object>
+  </Group>
+  <Group mat="sphere3">
+    <Object type="sphere">
+      10, 10, -10
+      6
+    </Object>
+  </Group>
+  <Group mat="sphere4">
+    <Object type="sphere">
+      10, 10, 10
+      6
+    </Object>
+  </Group>
+  <Group mat="sphere5">
+    <Object type="sphere">
+      10, -10, -10
+      6
+    </Object>
+  </Group>
+  <Group mat="sphere6">
+    <Object type="sphere">
+      10, 0, -10
+      2
+    </Object>
+    <Object type="sphere">
+      10, -10, 0
+      2
+    </Object>
+    <Object type="sphere">
+      10, 0, 10
+      2
+    </Object>
+    <Object type="sphere">
+      10, 10, 0
+      2
+    </Object>
+  </Group>
+</Objects>
+<Lights>
+  <Light type="directional" >
+    0
+    1, 1, 1
+    -1, -1, -1
+  </Light>
+  <!-- <Light type="point" >
+    20
+    1, 1, 1
+    0, 0, 29.9
+  </Light> -->
+</Lights>
+<Environment>
+  .7, .7, .8
+</Environment>
