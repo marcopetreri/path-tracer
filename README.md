@@ -4,9 +4,9 @@ A simple rendering engine written in C++ that implements _Monte Carlo Path Traci
 
 ## Compatibility
 
-As far as I know it only runs on Linux (ubuntu).
+Tested on linux ( ubuntu ) and mac osx.
 
-## Requirements
+## Requirements ( linux )
 
 Before building the project make sure you install OpenGL dev suite.
 
