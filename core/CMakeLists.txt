@@ -27,16 +27,16 @@ add_library(CAMERAS SHARED
   ${CAMERAS_DIR}/perspective.cpp
 )
 
-add_library(ACCELERATORS SHARED ${CMAKE_CURRENT_LIST_DIR}/accelerators/accelerator.cpp)
+add_library(ACCELERATORS STATIC ${CMAKE_CURRENT_LIST_DIR}/accelerators/accelerator.cpp)
 
-add_library(PARSER SHARED ${CMAKE_CURRENT_LIST_DIR}/utilities/parser.cpp)
+add_library(PARSER STATIC ${CMAKE_CURRENT_LIST_DIR}/utilities/parser.cpp)
 
-add_library(WORLD SHARED ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
+add_library(WORLD STATIC ${CMAKE_CURRENT_LIST_DIR}/world.cpp)
 
 # Linking libraries
 
 target_link_libraries(CAMERAS GEOMETRY)
 
-target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY ${ASSIMP_LIB})
+target_link_libraries(PARSER CAMERAS GEOMETRIC_OBJECTS GEOMETRY)
 
-target_link_libraries(WORLD ACCELERATORS PARSER ${SOIL2_LIB})
+target_link_libraries(WORLD ACCELERATORS PARSER)
