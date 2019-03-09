@@ -7,8 +7,8 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
-#include "../../otherLibs/rapidxml-1.13/rapidxml.hpp"
-#include "../../otherLibs/rapidxml-1.13/rapidxml_print.hpp"
+#include <rapidxml.hpp>
+#include <rapidxml_print.hpp>
 
 class Material;
 class Texture;
