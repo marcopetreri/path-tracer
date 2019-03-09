@@ -1,105 +1,45 @@
-<Film width="600" heigth="800" path="" >
-  rendering.bmp
-</Film>
-<Camera type="perspective" near="10e-5" far="10e5" fov="29.5">
-  100, 0, 0
-   0,  0, 0
-   0,  0,  1
+<Film width="800" heigth="800" path="">rendering.png</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="45">
+  0, 1, 3.55
+  0, 1, 0
+  0, 1, 0
 </Camera>
-<Sampler type="multijitter" samples="4">
-</Sampler>
-<Accelerator gen="1" prim="5">
-</Accelerator>
-<Integrator type="pathtracing" depth="3">
-</Integrator>
+<Sampler type="multijitter" samples="16"></Sampler>
+<Accelerator gen="1" prim="1"></Accelerator>
+<Integrator type="pathtracing" depth="3"></Integrator>
 <Materials>
-  <Material type="" name="yz">
-    <Brdfs type="add">
-      <Brdf type="lambert" map="">
-        0, 1, 0, 1
-      </Brdf>
-    </Brdfs>
-  </Material>
-  <Material type="" name="xz">
+  <Material type="" name="leftWall">
     <Brdfs type="add">
       <Brdf type="lambert" map="">
         1, 0, 0, 1
       </Brdf>
     </Brdfs>
   </Material>
-  <Material type="" name="zx">
+  <Material type="" name="rightWall">
     <Brdfs type="add">
       <Brdf type="lambert" map="">
-        0, 0, 1, 1
+        0, 1, 0, 1
       </Brdf>
     </Brdfs>
   </Material>
-  <Material type="" name="box">
+  <Material type="" name="white">
     <Brdfs type="add">
       <Brdf type="lambert">
         1, 1
-      </Brdf>
-    </Brdfs>
-  </Material>
-  <Material type="" name="cube">
-    <Brdfs type="add">
-      <Brdf type="lambert">
-        1, 1
-      </Brdf>
-    </Brdfs>
-  </Material>
-  <Material type="" name="sphere">
-    <Brdfs type="add">
-      <Brdf type="cooktorrance">
-        .3, .45
-      </Brdf>
-    </Brdfs>
-  </Material>
-  <Material type="" name="r2d2" emisMap="../assets/Star_Pack/Maps/R2D2_Illumination.dds">
-    <Brdfs type="add">
-      <Brdf type="lambert" map="../assets/Star_Pack/Maps/R2D2_Diffuse.dds">
-        1
-      </Brdf>
-      <Brdf type="cooktorrance" sMap="../assets/Star_Pack/Maps/R2D2_Specular.dds">
-        .2, .4
       </Brdf>
     </Brdfs>
   </Material>
 </Materials>
 <Objects>
-  <Group model="../assets/box.obj" mat="box">
-    *tr(0,0,-30)*sc(2.1,2.1,3)*rz(-90)*
-  </Group>
-  <Group model="../assets/cube.obj" mat="cube">
-    *tr(-5,-7,-17)*sc(7,7,13)*rz(20)*
-  </Group>
-  <!--<Group model="../assets/cube.obj" mat="cube">
-    *tr(5,7,-24)*sc(6)*rz(-20)*
-  </Group> -->
-  <!-- <Group model="../assets/Star_Pack/BB_Unit.obj" mat="cube">
-    *tr(-5,-8,-22)*sc(.13)*rz(20)*
-  </Group>-->
-  <!-- <Group model="../assets/Star_Pack/R2_Unit.obj" mat="r2d2">
-    *tr(6,8,-30)*sc(.15)*rz(-20)*
-    *tr(0,0,-30)*sc(.15)*rz(0)*
-  </Group> -->
-  <Group mat="sphere">
-    <Object type="sphere">
-      4, 8, -22
-      8
-    </Object>
+  <Group model="../assets/models/cornell_box.obj" mat="white">
+    <!-- *tr(0,0,-30)*sc(40,40,106.4)*rz(-90)* -->
   </Group>
 </Objects>
 <Lights>
-  <!-- <Light type="directional" >
-    3
-    1, 1, 1
-    -1, 0, -.5
-  </Light> -->
   <Light type="point" >
-    20
+    2
     1, 1, 1
-    0, 0, 29.9
+    0, 1.95, 0
   </Light>
 </Lights>
 <Environment>
