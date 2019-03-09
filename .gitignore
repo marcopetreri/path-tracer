@@ -1,8 +1,5 @@
 build
-assets
 CMakeCache.txt
 CMakeFiles
 CMakeModules
 .fuse_hidden*
-otherLibs/*
-!otherLibs/rapidxml-1.13
