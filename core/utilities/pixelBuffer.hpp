@@ -43,7 +43,7 @@ public:
     }
     else
     {
-      std::cout << "\t\t[ERROR] File reading failed, maybe invalid path?\n";
+      std::cout << "\t\t[ERROR] File (" << path << ") reading failed, maybe invalid path?\n";
       return false;
     }
   }

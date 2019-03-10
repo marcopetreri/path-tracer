@@ -97,7 +97,7 @@ ObjectGroup * Parser::importModel(const std::string & path, Material * mat, Tran
   ObjectGroup * og = new ObjectGroup(tr);
 
   if(!scene){
-    std::cout << "[ERROR] File reading failed, maybe invalid path?\n";
+    std::cout << "[ERROR] File (" << path << ") reading failed, maybe invalid path?\n";
     return og;
   }
 
