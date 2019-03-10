@@ -3,3 +3,4 @@ CMakeCache.txt
 CMakeFiles
 CMakeModules
 .fuse_hidden*
+.DS_Store
