@@ -1,0 +1,90 @@
+<Film width="800" heigth="800" path="" >
+  rendering.png
+</Film>
+<Camera type="perspective" near="10e-5" far="10e5" fov="45">
+  0, 0, 1.75
+  0,  0, 0
+  0,  1,  0
+</Camera>
+<Sampler type="multijitter" samples="64">
+</Sampler>
+<Accelerator gen="15" prim="5">
+</Accelerator>
+<Integrator type="pathtracing" depth="3">
+</Integrator>
+<Materials>
+  <Material type="" name="rightWall">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        0, 1, 0, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="leftWall">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 0, 0, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material type="" name="white">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material 
+    type="" 
+    name="r2d2" 
+    emisMap="../assets/textures/r2d2/R2D2_Illumination.dds"
+    normMap="../assets/textures/r2d2/R2D2_Normal.dds">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material 
+    type="" 
+    name="BB8_Head" 
+    emisMap="../assets/textures/bb8/Head_Illumination.dds"
+    normMap="../assets/textures/bb8/Head_Normal.dds">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+  <Material 
+    type="" 
+    name="BB8_Body" 
+    emisMap="../assets/textures/bb8/Body_Illumination.dds" 
+    normMap="../assets/textures/bb8/Body_Normal.dds">
+    <Brdfs type="add">
+      <Brdf type="lambert">
+        1, 1
+      </Brdf>
+    </Brdfs>
+  </Material>
+</Materials>
+<Objects>
+  <Group model="../assets/models/box.obj" mat="white">
+  </Group>
+  <Group model="../assets/models/BB_Unit.obj" mat="white">
+    *tr(.18, -.29, .20)*sc(.0035)*ry(-90)*rx(-90)*
+  </Group>
+  <Group model="../assets/models/R2_Unit.obj" mat="r2d2">
+   *tr(-.18, -.50, -.05)*sc(.0045)*ry(-90)*rx(-90)*
+  </Group>
+</Objects>
+<Lights>
+  <Light type="point" >
+    2
+    1, 1, 1
+    0, .49, 0
+  </Light>
+</Lights>
+<Environment>
+  0, 0 , 0
+</Environment>

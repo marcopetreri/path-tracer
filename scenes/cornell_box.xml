@@ -4,9 +4,9 @@
   0, 1, 0
   0, 1, 0
 </Camera>
-<Sampler type="multijitter" samples="16"></Sampler>
+<Sampler type="multijitter" samples="100"></Sampler>
 <Accelerator gen="1" prim="1"></Accelerator>
-<Integrator type="pathtracing" depth="3"></Integrator>
+<Integrator type="pathtracing" depth="4"></Integrator>
 <Materials>
   <Material type="" name="leftWall">
     <Brdfs type="add">
@@ -32,7 +32,6 @@
 </Materials>
 <Objects>
   <Group model="../assets/models/cornell_box.obj" mat="white">
-    <!-- *tr(0,0,-30)*sc(40,40,106.4)*rz(-90)* -->
   </Group>
 </Objects>
 <Lights>
