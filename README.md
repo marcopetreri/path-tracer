@@ -37,3 +37,17 @@ Special thanks to:
 - [Assimp](https://github.com/assimp/assimp) for the models importer
 - [SOIL2](https://github.com/alelievr/SOIL2) for the images importer
 - [Video Copilot](https://www.videocopilot.net) for some 3D models that I make use of
+
+## Some sample renders
+
+#### Cornell Box
+
+![Cornell Box](images/cornell_box.png)
+
+#### Star Wars Cornell Box
+
+![Star Wars Cornell Box](images/starwars_cornell_box.png)
+
+#### Star Wars R2D2 and BB8 scene
+
+![R2D2 and BB8](images/r2d2_bb8.png)
