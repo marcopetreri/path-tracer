@@ -13,7 +13,7 @@
 <Integrator type="">
 </Integrator>
 <Materials>
-  <Material type="" name="Plane" reflMap="../assets/textures/parquet_refl_smooth.jpg" >
+  <Material type="" name="floor" reflMap="../assets/textures/parquet_refl_smooth.jpg" >
     <Brdfs type="add">
       <Brdf type="lambert" map="../assets/textures/parquet.jpg">
         1
@@ -76,7 +76,7 @@
 </Materials>
 <Objects>
   <Group model="../assets/models/corner.obj" mat="corner">
-    *sc(6)*
+    *tr(-60, 0, 60)*sc(120)*rz(90)*rx(90)*
   </Group>
   <Group model="../assets/models/R2_Unit.obj" mat="r2d2">
     *tr(-35,0,0)*sc(.22)*

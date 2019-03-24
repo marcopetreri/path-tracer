@@ -48,6 +48,10 @@ Special thanks to:
 
 ![Star Wars Cornell Box](images/starwars_cornell_box.png)
 
+#### Cook Torrance Roughness
+
+![Cook Torrance Roughness](images/cook_torrance_roughness.png)
+
 #### Star Wars R2D2 and BB8 scene
 
 ![R2D2 and BB8](images/r2d2_bb8.png)

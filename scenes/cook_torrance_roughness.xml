@@ -1,33 +1,33 @@
-<Film width="800" heigth="600" path="" >
+<Film width="1024" heigth="768" path="" >
   rendering.png
 </Film>
-<Camera type="perspective" near="10e-5" far="10e5" fov="20">
-  25, 25, 25
-   -10,  -10,  3.5
-   0,  0,  1
+<Camera type="perspective" near="10e-5" far="10e5" fov="45">
+  1.15, 1.15, .25
+  0, 0, 0
+  0, 0, 1
 </Camera>
-<Sampler type="multijitter" samples="64">
+<Sampler type="multijitter" samples="100">
 </Sampler>
 <Accelerator gen="20" prim="50">
 </Accelerator>
-<Integrator type="pathtracing" depth="2">
+<Integrator type="pathtracing" depth="3">
 </Integrator>
 <Materials>
-  <Material type="" name="corner">
+  <Material type="" name="white">
     <Brdfs type="add">
       <Brdf type="lambert">
         1, 1
       </Brdf>
     </Brdfs>
   </Material>
-  <Material type="" name="Plane.002">
+  <Material type="" name="leftWall">
     <Brdfs type="add">
       <Brdf type="lambert">
         1, 0, 0, 1
       </Brdf>
     </Brdfs>
   </Material>
-  <Material type="" name="Plane.001">
+  <Material type="" name="rightWall">
     <Brdfs type="add">
       <Brdf type="lambert">
         0, 1, 0, 1
@@ -57,17 +57,17 @@
   </Material>
 </Materials>
 <Objects>
-  <Group model="../assets/corner.obj" mat="corner">
-  *sc(2)*
+  <Group model="../assets/models/corner.obj" mat="white">
+    *sc(2)*tr(0, .5, .5)*rz(90)*rx(90)*
   </Group>
-  <Group model="../assets/suzanne.obj" mat="s1">
-    *tr(-5,-15,3.5)*sc(3)*rz(135)*rx(90)*
+  <Group model="../assets/models/suzanne.obj" mat="s1">
+    *tr(.35, .8, .1)*sc(.1)*rz(135)*rx(90)*
   </Group>
-  <Group model="../assets/suzanne.obj" mat="s2">
-    *tr(-5,-5,3.5)*sc(3)*rz(135)*rx(90)*
+  <Group model="../assets/models/suzanne.obj" mat="s2">
+    *tr(.55, .55, .1)*sc(.1)*rz(135)*rx(90)*
   </Group>
-  <Group model="../assets/suzanne.obj" mat="s3">
-    *tr(-15,-5,3.5)*sc(3)*rz(135)*rx(90)*
+  <Group model="../assets/models/suzanne.obj" mat="s3">
+    *tr(.8, .35, .1)*sc(.1)*rz(135)*rx(90)*
   </Group>
 </Objects>
 <Lights>
